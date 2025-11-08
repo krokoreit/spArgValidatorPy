@@ -7,9 +7,9 @@ name = "spArgValidatorPy"
 authors = [
   { name="krokoreit", email="krokoreit@gmail.com" },
 ]
-description = "A Python package for ..."
+description = "A Python package for validating function arguments and either raising an exception or returning the validated value."
 keywords = [
-    "key1",
+    "argument validation", "valid integer", "valid float", "valid string", "validator", "function arguments"
 ]
 # dependencies = [
 #   "foo", ….
