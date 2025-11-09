@@ -3,6 +3,8 @@
 [![PyPI - Version](https://img.shields.io/pypi/v/spArgValidatorPy.svg)](https://pypi.org/project/spArgValidatorPy)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/spArgValidatorPy.svg)](https://pypi.org/project/spArgValidatorPy)
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 This package provides a Python module for validating function arguments. Depending on the outcome, it either raises an exception or returns the validated value.
 
