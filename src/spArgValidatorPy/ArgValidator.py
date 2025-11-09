@@ -68,6 +68,10 @@ def raise_with_stopped_traceback(exception_type, exception_text):
         sig = inspect.signature(function)
     raise exception_type(function_name + str(sig) + " " + exception_text)
 
+def reset_traceback():
+    """Resets the stop_TB_at_function_name to None. This is to prevent unintended stopping of traceback information. This would occur
+    when a raise_with_stopped_traceback() created exception gets caught with a try-except-block and a subsequent exception 
+    occurs with the stop_TB_at_function_name still being on the calling stack ... Call reset_traceback() at start of each validation."""
 
 def get_value_for_var_name(var_name):
     """Returns the value for the variable named var_name."""
@@ -86,6 +90,8 @@ class ArgValidator:
         """Returns a validated integer value or raises exception. Optional checking for limits (min_value, max_value) or in strict 
         mode (not allowing string representation of an integer). Specifying an integer value with default=[int] or setting 
         return_limits=True will prohibit an exception being raised and the default or exceeded limit value is returned."""
+        
+        reset_traceback()
         if default is not None and not isinstance(default, int):
             raise_with_stopped_traceback(TypeError, "called with 'default' not being an integer.")
 
@@ -127,6 +133,8 @@ class ArgValidator:
         """Returns a validated float value or raises exception. Optional checking for limits (min_value, max_value) or in strict 
         mode (not allowing string representation of an float). Specifying an float value with default=[float] or setting 
         return_limits=True will prohibit an exception being raised and the default or exceeded limit value is returned."""
+
+        reset_traceback()
         if default is not None and not isinstance(default, float):
             raise_with_stopped_traceback(TypeError, "called with 'default' not being a float.")
 
@@ -185,6 +193,8 @@ class ArgValidator:
         """Returns a validated string value or raises exception. Optional checking in strict mode (not allowing non-string 
         values that can be converted to string). Specifying an string value with default=[string] will prohibit an 
         exception being raised and the default being returned."""
+
+        reset_traceback()
         if default is not None and not isinstance(default, str):
             raise_with_stopped_traceback(TypeError, "called with 'default' not being a string.")
 
