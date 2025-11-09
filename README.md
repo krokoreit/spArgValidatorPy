@@ -4,17 +4,17 @@
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/spArgValidatorPy.svg)](https://pypi.org/project/spArgValidatorPy)
 
 
-This package provides a Python module validating function arguments and either raising an exception or returning the validated value.
+This package provides a Python module for validating function arguments. Depending on the outcome, it either raises an exception or returns the validated value.
 
-When an argument for a numeric value is given as a string representation (e.g. "100" or "3.24"), it is converted and returned as a valid integer or float value, unless validation is done in strict mode. It is also possible to validate numeric values against limits by specifying a minimum value, a maximum value or both.
+If a numeric argument is provided as a string representation (e.g. "100" or "3.24"), it will be converted and returned as a valid int or float, unless validation is performed in strict mode. Numeric arguments can also be checked against minimum and/or maximum limits.
 
-A value for a string argument is treated as valid, when such value can be converted to a string (e.g. 123 becomes "123"), unless validation is done in strict mode, which will only accept values of type str. By default strings are validated against a minimum length of 1, meaning that empty strings will throw an exception. This can be disabled by validation with a minimum length of 0. Similarly, strings can be validated against a minimum length of e.g. 10 characters.
+String arguments are considered valid if they can be converted to a string (e.g. 123 becomes "123"), unless validation is done in strict mode, which only accepts values of type str. By default, empty strings cause an exception, but this can be disabled by allowing a minimum length of 0.
 
-All validation functions have an optional 'default' argument, which - instead of an exception thrown - is returned in case the validation fails. This simplifies coding, as it avoids the need to wrap a validation function with a try: .. except: block to set a specific fallback value. Note, that this value has to be given as an keyword argument (i.e. 'default=value') with value being the correct type (i.e. str, int or float).
+All validation functions support an optional default argument. If provided, this value is returned instead of raising an exception when validation fails. This simplifies code by removing the need for a separate try–except block to set fallback values. The default must be passed as a keyword argument (default=value) and must match the expected type (str, int, or float).
 
-Equally, validation functions for numeric values have an option to return the set minimum or maximum value instead of throwing an exception, when setting the keyword argument 'return_limits=True'.
+For numeric validations, you can also enable the return_limits=True option to return the defined minimum or maximum value instead of raising an exception.
 
-For more details see below API explanation and over 20 examples given in the example01.py file (examples folder).
+For more details, see the API reference below and the examples in examples/example01.py, which includes over 20 usage demonstrations.
 
 Enjoy
 
@@ -48,7 +48,7 @@ Argument validation is then as simple as
       ....
 ```
 Note that the name of the argument is passed to the validation function and not the value.  
-After successful validation (no exception raised), these variables can be safely used as str, int and float. For more complex validation with the use of strict mode, minumum or maximum values allowed or defaults, see the validation functions below.
+After successful validation (no exception raised), these variables can be safely used as str, int and float. For more complex validation with the use of strict mode, minimum or maximum values allowed or defaults, see the validation functions below.
 
 
 </br>
@@ -75,7 +75,7 @@ Arguments:
 - max_value  
   Optional upper limit to validate var_name's value against.
 - strict  
-  Optional setting to allow only integers as var_name's value, when set to True. The default is validation in non-strict mode, which allowes string representations of an integer (e.g. "220").
+  Optional setting to allow only integers as var_name's value, when set to True. The default is validation in non-strict mode, which allows string representations of an integer (e.g. "220").
 - default  
   Optional setting for an integer default value. This avoids an exception being raised in case var_name's value fails validation and this default value is returned instead. 
 - return_limits  
@@ -100,7 +100,7 @@ Arguments:
 - max_value  
   Optional upper limit to validate var_name's value against.
 - strict  
-  Optional setting to allow only a float as var_name's value, when set to True. The default is validation in non-strict mode, which allowes string representations of a float (e.g. "1.99").
+  Optional setting to allow only a float as var_name's value, when set to True. The default is validation in non-strict mode, which allows string representations of a float (e.g. "1.99").
 - default  
   Optional setting for a float default value. This avoids an exception being raised in case var_name's value fails validation and this default value is returned instead. 
 - return_limits  
@@ -121,9 +121,9 @@ Returns the validated float value or with the default or return_limits option us
 - var_name  
   The name of the argument being validated.
 - min_length  
-  The minimum length required for a valid string.
+  The minimum length required for a valid string. By default thi sis set to 1, meaning that empty strings will throw an exception. This can be set to 0 to allow empty strings or to any other length, against which you want to validate.
 - strict  
-  Optional setting to allow only a string as var_name's value, when set to True. The default is validation in non-strict mode, which allowes any value, which can be converted into a string.
+  Optional setting to allow only a string as var_name's value, when set to True. The default is validation in non-strict mode, which allows any value, which can be converted into a string.
 - default  
   Optional setting for a string default value. This avoids an exception being raised in case var_name's value fails validation and this default value is returned instead. 
 
