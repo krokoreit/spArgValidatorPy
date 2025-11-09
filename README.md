@@ -67,7 +67,7 @@ After successful validation (no exception raised), these variables can be safely
 
 #### get_validated_int() Method
 ```py
-  get_validated_int(var_name, min_value, max_value, strict, default=None, return_limits=False)
+  get_validated_int(var_name, min_value, max_value, strict, default=int_value, return_limits=boolean_value)
 ```
 Arguments:
 - var_name  
@@ -77,11 +77,11 @@ Arguments:
 - max_value  
   Optional upper limit to validate var_name's value against.
 - strict  
-  Optional setting to allow only integers as var_name's value, when set to True. The default is validation in non-strict mode, which allows string representations of an integer (e.g. "220").
-- default  
-  Optional setting for an integer default value. This avoids an exception being raised in case var_name's value fails validation and this default value is returned instead. 
-- return_limits  
-  Optional setting to avoid an exception being raised for values outside the limits. 
+  Optional boolean argument to allow only integers as var_name's value, when set to True. The default is validation in non-strict mode, which allows string representations of an integer (e.g. "220").
+- default=int_value  
+  Optional keyword argument for an integer default value. When set, it avoids an exception being raised in case var_name's value fails validation and this default value is returned instead. 
+- return_limits=boolean_value  
+  Optional keyword argument to avoid an exception being raised for values outside the limits. 
   When set to True and with either min_value or max_value being exceeded, this limit value is returned as validated value.
 
 Returns the validated integer value or with the default or return_limits option used, one of these values instead of an exception raised.
@@ -92,7 +92,7 @@ Returns the validated integer value or with the default or return_limits option 
 
 #### get_validated_float() Method
 ```py
-  get_validated_float(var_name, min_value, max_value, strict, default=None, return_limits=False)
+  get_validated_float(var_name, min_value, max_value, strict, default=float_value, return_limits=boolean_value)
 ```
 Arguments:
 - var_name  
@@ -102,11 +102,11 @@ Arguments:
 - max_value  
   Optional upper limit to validate var_name's value against.
 - strict  
-  Optional setting to allow only a float as var_name's value, when set to True. The default is validation in non-strict mode, which allows string representations of a float (e.g. "1.99").
-- default  
-  Optional setting for a float default value. This avoids an exception being raised in case var_name's value fails validation and this default value is returned instead. 
-- return_limits  
-  Optional setting to avoid an exception being raised for values outside the limits. 
+  Optional boolean argument to allow only a float as var_name's value, when set to True. The default is validation in non-strict mode, which allows string representations of a float (e.g. "1.99").
+- default=float_value  
+  Optional keyword argument for a float default value. When set, it avoids an exception being raised in case var_name's value fails validation and this default value is returned instead. 
+- return_limits=boolean_value  
+  Optional keyword argument to avoid an exception being raised for values outside the limits. 
   When set to True and with either min_value or max_value being exceeded, this limit value is returned as validated value.
 
 Returns the validated float value or with the default or return_limits option used, one of these values instead of an exception raised.
@@ -118,16 +118,16 @@ Returns the validated float value or with the default or return_limits option us
 
 #### get_validated_str() Method
 ```py
-  get_validated_str(var_name, min_length, strict, default=None)
+  get_validated_str(var_name, min_length, strict, default=str_value)
 ```
 - var_name  
   The name of the argument being validated.
 - min_length  
   The minimum length required for a valid string. By default thi sis set to 1, meaning that empty strings will throw an exception. This can be set to 0 to allow empty strings or to any other length, against which you want to validate.
 - strict  
-  Optional setting to allow only a string as var_name's value, when set to True. The default is validation in non-strict mode, which allows any value, which can be converted into a string.
-- default  
-  Optional setting for a string default value. This avoids an exception being raised in case var_name's value fails validation and this default value is returned instead. 
+  Optional boolean argument to allow only a string as var_name's value, when set to True. The default is validation in non-strict mode, which allows any value, which can be converted into a string.
+- default=str_value  
+  Optional keyword argument for a string default value. When set, it avoids an exception being raised in case var_name's value fails validation and this default value is returned instead. 
 
 Returns the validated string value or with the default option used, this value instead of an exception raised.
 
