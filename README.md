@@ -57,7 +57,7 @@ After successful validation (no exception raised), these variables can be safely
 
 ### API
 
-#### </a>Methods<a id="methods">
+#### Methods<a id="methods"></a>
 * [get_validated_int()](#get_validated_int-method)  
 * [get_validated_float()](#get_validated_float-method)  
 * [get_validated_str()](#get_validated_str-method)  

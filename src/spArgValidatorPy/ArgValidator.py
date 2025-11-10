@@ -77,6 +77,8 @@ def get_value_for_var_name(var_name):
     """Returns the value for the variable named var_name."""
     frame = inspect.currentframe().f_back
     local_vars = frame.f_back.f_locals
+    if not isinstance(var_name, str):
+        raise_with_stopped_traceback(TypeError, "called with var_name not being a string.")
     if len(var_name) == 0:
         raise_with_stopped_traceback(ValueError, "called without var_name, must be one of " + str(local_vars.keys()) + ".")
     if var_name not in local_vars:
