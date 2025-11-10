@@ -57,7 +57,7 @@ After successful validation (no exception raised), these variables can be safely
 
 ### API
 
-#### <a name="methods"></a>Methods
+#### </a>Methods<a id="methods">
 * [get_validated_int()](#get_validated_int-method)  
 * [get_validated_float()](#get_validated_float-method)  
 * [get_validated_str()](#get_validated_str-method)  
@@ -65,7 +65,7 @@ After successful validation (no exception raised), these variables can be safely
 </br>
 
 
-#### <a name="get_validated_int-method"></a>get_validated_int() Method
+#### get_validated_int() Method<a id="get_validated_int-method"></a>
 ```py
   get_validated_int(var_name, min_value, max_value, strict, default=int_value, return_limits=boolean_value)
 ```
@@ -90,7 +90,7 @@ Returns the validated integer value or with the default or return_limits option 
 
 </br>
 
-#### <a name="get_validated_float-method"></a>get_validated_float() Method
+#### get_validated_float() Method<a id="get_validated_float-method"></a>
 ```py
   get_validated_float(var_name, min_value, max_value, strict, default=float_value, return_limits=boolean_value)
 ```
@@ -116,7 +116,7 @@ Returns the validated float value or with the default or return_limits option us
 
 </br>
 
-#### <a name="get_validated_str-method"></a>get_validated_str() Method
+#### get_validated_str() Method<a id="get_validated_str-method"></a>
 ```py
   get_validated_str(var_name, min_length, strict, default=str_value)
 ```
