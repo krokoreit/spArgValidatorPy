@@ -21,7 +21,7 @@ For more details, see the API reference below and the examples in examples/examp
 Enjoy
 
 &emsp;krokoreit  
-&emsp;&emsp;&emsp;<img src="https://github.com/krokoreit/spArgValidatorPy/blob/main/assets/krokoreit-01.svg" width="140"/>
+&emsp;&emsp;&emsp;<img src="https://github.com/krokoreit/spArgValidatorPy/blob/main/assets/krokoreit-01.svg?raw=true" width="140"/>
 
 
 ## Installation
