@@ -31,6 +31,10 @@ Homepage = "https://github.com/krokoreit/spArgValidatorPy"
 [tool.hatch.version]
 source = "vcs"
 
+[tool.hatch.version.raw-options]
+version_scheme = "only-version"
+local_scheme = "no-local-version"
+
 [tool.hatch.envs.default.scripts]
 dev = "py ./dev/dev01.py"
 dev02 = "py ./dev/dev02.py"
