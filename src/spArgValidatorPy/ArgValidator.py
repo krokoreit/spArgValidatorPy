@@ -2,7 +2,7 @@
 #
 #   ArgValidator class
 #
-#   object for validating function arguments and either raising an exception 
+#   An object for validating function arguments and either raising an exception 
 #   or returning the validated value
 #
 #   MIT License
